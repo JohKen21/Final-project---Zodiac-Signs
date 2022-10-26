@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <html>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+          html {
+            box-sizing: border-box;
+          }
+
+          *,
+          *:before,
+          *:after {
+            box-sizing: inherit;
+          }
+
+          .column {
+            float: left;
+            width: 33.3%;
+            margin-bottom: 16px;
+            padding: 0 20px;
+          }
+
+          @media screen and (max-width: 650px) {
+            .column {
+              width: 100%;
+              display: block;
+            }
+          }
+
+          .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          }
+
+          .container {
+            padding: 0 16px;
+          }
+
+          .container::after,
+          .row::after {
+            content: "";
+            clear: both;
+            display: table;
+          }
+
+          .title {
+            color: grey;
+          }
+
+          * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+          }
+          nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            min-height: 8vh;
+            background-color: black;
+            font-family: "Poppins", sans-serif;
+          }
+
+          .logo {
+            color: rgb(226, 226, 226);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 20px;
+          }
+          .nav-links {
+            display: flex;
+
+            justify-content: space-around;
+            width: 30%;
+          }
+          .nav-links li {
+            list-style: none;
+          }
+          .nav-links a {
+            color: white;
+            text-decoration: none;
+            letter-spacing: 3px;
+            font-weight: bold;
+            font-size: 14px;
+          }
+
+          footer {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            min-height: 8vh;
+            background-color: black;
+            font-family: "Poppins", sans-serif;
+          }
+          .footer-links {
+            display: flex;
+            justify-content: space-around;
+            width: 30%;
+          }
+          .footer-links li {
+            list-style: none;
+          }
+          .footer-links a {
+            color: white;
+            text-decoration: none;
+            letter-spacing: 3px;
+            font-weight: bold;
+            font-size: 14px;
+          }
+        </style>
+      </head>
+      <body>
+        <nav>
+          <div class="logo">
+            <h4>ZODIAC SIGNS</h4>
+          </div>
+          <ul class="nav-links">
+            <li>
+              <a href="{{ url_for('index') }}">Home</a>
+            </li>
+            <li>
+              <a href="{{ url_for('pageOne') }}">Zodiac</a>
+            </li>
+            <li>
+              <a href="{{ url_for('about') }}">About</a>
+            </li>
+            <li>
+              <a href="{{ url_for('members') }}">Members</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="row">
+          <div class="column">
+            <div class="card">
+              <img src="{{ url_for('static', filename='capricorn.jpg')}}" alt="CAP" style="width: 100%" />
+              <div class="container">
+                <h2>C A P R I C O R N</h2>
+                <p class="title">Dec 22 - Jan 19</p>
+                <br />
+                <p>
+                  Capricorn, (from Latin: “Goat-Horned”) also called Capricornus
+                  and the Goat, in astrology, the 10th sign of the zodiac,
+                  considered as governing the period from about December 22 to
+                  about January 19. One explanation of the fishtail with which
+                  the goat is often represented is found in the Greek myth of
+                  Pan, who, to avoid the monster Typhon, jumped into the water
+                  just as he was changing into animal shape. The half above
+                  water assumed the shape of a goat while the lower half, the
+                  tail, assumed the shape of a fish.
+                </p>
+                <br />
+                <p>
+                  In astronomy, Capricornus is a zodiacal constellation lying in
+                  the southern sky between Aquarius and Sagittarius, at about 21
+                  hours right ascension and 20° south declination. Its stars are
+                  faint; Deneb Algedi (Arabic for “kid’s tail”) is the brightest
+                  star, with a magnitude of 2.9. Capricornus usually refers to
+                  the constellation, and Capricorn usually refers to the
+                  astrological sign.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="card">
+              <img src="{{ url_for('static', filename='aquarius.jpg')}}" alt="aquarius" style="width: 100%" />
+              <div class="container">
+                <h2>A Q U A R I U S</h2>
+                <p class="title">Jan 20 - Feb 18</p>
+                <br />
+                <p>
+                  Aquarius, (Latin: “Water Bearer”) in astronomy, zodiacal
+                  constellation lying in the southern sky between Capricornus
+                  and Pisces, at about 22 hours right ascension and 10° south
+                  declination. It lacks striking features, the brightest star,
+                  Sadalmelik (Arabic for “the lucky stars of the king”), being
+                  of magnitude 3.0.
+                </p>
+                <br />
+                <p>
+                  In astrology, Aquarius is the 11th sign of the zodiac,
+                  considered as governing the period from about January 20 to
+                  about February 18. Its representation as a man pouring a
+                  stream of water out of a jug came about, it has been
+                  suggested, because in ancient times the rising of Aquarius
+                  coincided in the Middle East with a period of floods and rain.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="card">
+              <img src="{{ url_for('static', filename='pisces.jpg')}}" alt="pic" style="width: 100%" />
+              <div class="container">
+                <h2>P I S C E S</h2>
+                <p class="title">Feb 19 - Mar 20</p>
+                <br />
+                <p>
+                  Aries, (Latin: “Ram”) in astronomy, zodiacal constellation in
+                  the northern sky lying between Pisces and Taurus, at about 3
+                  hours right ascension and 20° north declination.
+                </p>
+                <br />
+                <p>
+                  Aries contains no very bright stars; the brightest star, Hamal
+                  (Arabic for “sheep”), has a magnitude of 2.0. The first point
+                  of Aries, or vernal equinox, is an intersection of the
+                  celestial equator with the apparent annual pathway of the Sun
+                  and the point in the sky from which celestial longitude and
+                  right ascension are measured. The vernal equinox no longer
+                  lies in Aries but has been moved into Pisces by the precession
+                  of the equinoxes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer>
+          <ul class="footer-links">
+            <li>
+              <a href="{{ url_for('pageThree') }}">PREVIOUS</a>
+            </li>
+            <li>
+              <a href="{{ url_for('index') }}">BACK TO HOME</a>
+            </li>
+          </ul>
+        </footer>
+      </body>
+    </html>
+  </body>
+</html>
